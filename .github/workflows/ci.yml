@@ -1,0 +1,15 @@
+on:
+  push:
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Control
+        uses: actions/checkout@v4
+      - name: JavaInstall
+        uses: actions/setup-jdk@v4
+        with:
+          distribution: "OpenJDK"
+          java-version: 21
+      - name: Build
+        run: ./gradlew build
