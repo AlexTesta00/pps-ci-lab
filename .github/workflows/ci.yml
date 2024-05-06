@@ -6,8 +6,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: joschi/setup-jdk@v2.3.0
+#                - uses: joschi/setup-jdk@v2.3.0
+#                with:
+#                  java-version: '21'
+      - uses: actions/setup-java@v4
         with:
+          distribution: 'temurin'
           java-version: '21'
       - name: Build
         run: ./gradlew clean build
